@@ -57,3 +57,5 @@ Basically a hardcoded string value is always stored on the stack because the siz
 The concept of ownership is when a value is owned by a scope and this is passed to a function the function then takes ownership of the value and unless it is returned, the value will be dropped when the function returns.
 To pass the string as a reference we use the &str which is a string slice that points to a string stored on the heap. The function can now refer to the value without taking ownership. The action of passing a reference is called borrowing.
 A borrowed value cannot be modified because it does not own the value. To fix this we can use a mutable reference to the value but with a restriction that the reference cannot be borrowed as immutable and mutable at the same time.
+
+# Structs
