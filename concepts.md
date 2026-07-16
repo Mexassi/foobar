@@ -59,3 +59,6 @@ To pass the string as a reference we use the &str which is a string slice that p
 A borrowed value cannot be modified because it does not own the value. To fix this we can use a mutable reference to the value but with a restriction that the reference cannot be borrowed as immutable and mutable at the same time.
 
 # Structs
+Are objects, they are cool. They have the same borrow rules as other values. They can have methods by using the `impl` keyword. The same struct can be implemented multiple times and struct can be printed using the [#derive(Debug)] attribute and then the `dbg!` macro or printed with the `{:?}` format string or pretty printed with the `{:#?}` format string.
+
+# Enums and pattern matching
