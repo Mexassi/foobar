@@ -15,6 +15,16 @@ fn main() {
   color = Colors::Blue;
   println!("{}", value_in_hex(color));
   dice_roll_fn();
+
+  let x = {
+    let price = 5;
+    let qty = 10;
+    price * qty
+  };
+
+  println!("{}", x);
+
+  println!("{}", add(2, 10))
 }
 
 fn value_in_hex(color: Colors) -> String {
@@ -47,4 +57,8 @@ fn dice_roll_fn() {
   fn walk(value: u8) {
     println!("Walking {}", value);
   }
+}
+
+fn add(a: i32, b: i32) -> i32 {
+  a + b
 }

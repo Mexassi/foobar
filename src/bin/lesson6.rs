@@ -8,6 +8,10 @@ fn main() {
   // println!("{}", two);
   let first = first_word(&s);
   println!("{}", first);
+
+  let str: String = String::from("Hey mate!");
+  let _ref = &str[0..3];
+  println!("{}", _ref);
 }
 
 // fn modify_string(s: &mut String) {
