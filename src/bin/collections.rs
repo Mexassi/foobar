@@ -14,8 +14,10 @@ fn main() {
 
   let mut map = HashMap::new();
   map.insert("John", 20);
-  let found = map.get("John");
+  let found = map.get("Johns");
   if let Some(age) = found {
     println!("{}", age);
+  } else {
+    panic!("ops")
   }
 }
