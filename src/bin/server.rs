@@ -4,7 +4,7 @@ use foobar::ThreadPool;
 fn main() {
     let listener = TcpListener::bind("127.0.0.1:7878").unwrap();
     let pool = ThreadPool::new(4);
-    for stream in listener.incoming() {
+    for stream in listener.incoming().take(2) {
         let _stream = stream.unwrap();
         pool.execute(|| handle_stream(_stream));
     }
@@ -27,7 +27,6 @@ fn handle_stream(mut stream: std::net::TcpStream) {
     println!("should respond with html");
     let status_line = "HTTP/1.1 200 OK";
     let contents = fs::read_to_string("hello.html").unwrap();
-    println!("contents: {}", contents);
     let length = contents.len();
 
     let response =
